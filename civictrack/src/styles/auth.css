@@ -1,0 +1,999 @@
+/* ============================================================
+   CivicTrack – Modern Authentication Stylesheet
+   Navy Blue & Sky Blue Civic Theme | Glassmorphism & Animations
+   ============================================================ */
+
+/* Container & Layout */
+.civic-auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  background-color: #0A1628;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+    radial-gradient(at 90% 85%, rgba(29, 78, 216, 0.18) 0px, transparent 55%),
+    radial-gradient(at 50% 50%, rgba(15, 32, 68, 0.6) 0px, transparent 70%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1E293B;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Subtle Grid Pattern */
+.civic-auth-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   Left Panel (Civic Brand & Showcase)
+   ============================================================ */
+.civic-auth-left {
+  flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 56px;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(160deg, rgba(10, 22, 40, 0.92) 0%, rgba(15, 32, 68, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Government Portal Badge */
+.civic-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.civic-brand-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.civic-brand-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0EA5E9 0%, #1D4ED8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.civic-brand-icon:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.civic-brand-text h1 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.civic-brand-text span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38BDF8;
+  display: block;
+  margin-top: 2px;
+}
+
+.civic-gov-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #E0F2FE;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.civic-gov-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* Left Hero Content */
+.civic-left-hero {
+  margin: 40px 0;
+}
+
+.civic-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #38BDF8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.civic-hero-heading {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.civic-hero-heading .highlight {
+  background: linear-gradient(135deg, #38BDF8 0%, #60A5FA 60%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.civic-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #CBD5E1;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+/* Interactive SVG Civic City Showcase Card */
+.civic-visual-card {
+  position: relative;
+  background: rgba(15, 32, 68, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.civic-visual-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0EA5E9, transparent);
+}
+
+.civic-svg-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Floating Status Pills over Illustration */
+.civic-floating-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.civic-float-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: #E2E8F0;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.civic-float-pill:hover {
+  background: rgba(14, 165, 233, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.civic-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.civic-pill-dot.green { background: #34D399; box-shadow: 0 0 6px #34D399; }
+.civic-pill-dot.sky   { background: #38BDF8; box-shadow: 0 0 6px #38BDF8; }
+.civic-pill-dot.amber { background: #FBBF24; box-shadow: 0 0 6px #FBBF24; }
+
+/* Left Statistics Grid */
+.civic-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.civic-stat-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.civic-stat-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(14, 165, 233, 0.3);
+  transform: translateY(-2px);
+}
+
+.civic-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #38BDF8;
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+
+.civic-stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.civic-stat-sub {
+  font-size: 0.72rem;
+  color: #34D399;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Left Footer */
+.civic-left-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: #94A3B8;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.civic-security-badges {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.civic-sec-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #CBD5E1;
+}
+
+/* Demo Credentials Quick Switcher */
+.civic-demo-accounts {
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 20px;
+}
+
+.civic-demo-accounts-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #38BDF8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.civic-demo-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.civic-demo-chip {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E2E8F0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.civic-demo-chip:hover {
+  background: rgba(14, 165, 233, 0.25);
+  border-color: #38BDF8;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   Right Panel (Form Area)
+   ============================================================ */
+.civic-auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  background: #F8FAFC;
+  position: relative;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.civic-form-card {
+  width: 100%;
+  max-width: 480px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 44px 40px;
+  box-shadow: 
+    0 10px 25px -5px rgba(10, 22, 40, 0.05),
+    0 20px 48px -10px rgba(10, 22, 40, 0.08);
+  border: 1px solid #E2E8F0;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.civic-form-card-top-bar {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 4px;
+  background: linear-gradient(90deg, #0EA5E9, #1D4ED8, #0EA5E9);
+  border-radius: 0 0 4px 4px;
+}
+
+/* Mobile Brand Header inside Right Panel */
+.civic-mobile-brand {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Form Titles */
+.civic-form-header {
+  margin-bottom: 28px;
+}
+
+.civic-form-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0A1628;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.civic-form-header p {
+  color: #64748B;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Official Google Sign-In Button
+   ============================================================ */
+.google-auth-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 20px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1E293B;
+  font-family: 'Inter', Roboto, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.google-auth-btn:hover:not(:disabled) {
+  background: #F8FAFC;
+  border-color: #94A3B8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.google-auth-btn:active:not(:disabled) {
+  transform: translateY(0);
+  background: #F1F5F9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.google-auth-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: grayscale(20%);
+}
+
+.google-icon-svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.civic-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 24px 0;
+  color: #94A3B8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.civic-divider::before,
+.civic-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.civic-divider span {
+  padding: 0 14px;
+}
+
+/* ============================================================
+   Form Inputs & Labels
+   ============================================================ */
+.civic-input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.civic-input-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 7px;
+}
+
+.civic-input-label-optional {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #94A3B8;
+}
+
+.civic-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.civic-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #94A3B8;
+  pointer-events: none;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.civic-input {
+  width: 100%;
+  padding: 13px 16px 13px 44px;
+  font-size: 0.95rem;
+  color: #0A1628;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.civic-input::placeholder {
+  color: #94A3B8;
+  font-size: 0.9rem;
+}
+
+.civic-input:hover:not(:disabled):not(:focus) {
+  border-color: #94A3B8;
+}
+
+.civic-input:focus {
+  border-color: #0EA5E9;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+}
+
+.civic-input-box:focus-within .civic-input-icon {
+  color: #0EA5E9;
+}
+
+.civic-input.has-error {
+  border-color: #EF4444 !important;
+  background-color: #FFF5F5;
+}
+
+.civic-input.has-error:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15) !important;
+}
+
+.civic-field-error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #EF4444;
+  font-weight: 500;
+  animation: fadeIn 0.2s ease-in;
+}
+
+/* Password Toggle Button */
+.civic-password-toggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.civic-password-toggle:hover {
+  color: #0A1628;
+  background: #F1F5F9;
+}
+
+/* Password Strength Indicator */
+.civic-pwd-strength {
+  margin-top: 8px;
+}
+
+.civic-pwd-bars {
+  display: flex;
+  gap: 4px;
+  height: 4px;
+  margin-bottom: 5px;
+}
+
+.civic-pwd-bar {
+  flex: 1;
+  background: #E2E8F0;
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.civic-pwd-bar.active-weak   { background: #EF4444; }
+.civic-pwd-bar.active-medium { background: #F59E0B; }
+.civic-pwd-bar.active-strong { background: #10B981; }
+
+.civic-pwd-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748B;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Checkboxes and Links */
+.civic-form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18px 0 24px 0;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.civic-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  user-select: none;
+  color: #475569;
+  font-size: 0.875rem;
+}
+
+.civic-custom-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.civic-checkbox-input {
+  display: none;
+}
+
+.civic-checkbox-input:checked + .civic-custom-checkbox {
+  background: #0EA5E9;
+  border-color: #0EA5E9;
+  color: #FFFFFF;
+}
+
+.civic-link {
+  color: #0284C7;
+  font-weight: 600;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.civic-link:hover {
+  color: #0369A1;
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.civic-btn-submit {
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #0EA5E9 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.civic-btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.45);
+}
+
+.civic-btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.civic-btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Spinner Animation */
+.civic-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+.civic-spinner.dark {
+  border-color: rgba(14, 165, 233, 0.25);
+  border-top-color: #0EA5E9;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Switch Page Footer inside Form Card */
+.civic-card-footer {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #F1F5F9;
+  font-size: 0.9rem;
+  color: #64748B;
+}
+
+/* Alerts and Notifications */
+.civic-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  margin-bottom: 20px;
+  animation: slideDown 0.25s ease-out;
+}
+
+.civic-alert-error {
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #991B1B;
+}
+
+.civic-alert-success {
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  color: #166534;
+}
+
+.civic-alert-info {
+  background-color: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  color: #0369A1;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================================================
+   Modals (Firebase Setup, Forgot Password, Terms, Google Success)
+   ============================================================ */
+.civic-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.civic-modal-dialog {
+  width: 100%;
+  max-width: 520px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  border: 1px solid #E2E8F0;
+  position: relative;
+  animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.civic-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #F1F5F9;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.civic-modal-close:hover {
+  background: #E2E8F0;
+  color: #0A1628;
+}
+
+/* Google Profile Display Modal Card */
+.civic-profile-card {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.civic-profile-avatar-wrap {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+}
+
+.civic-profile-avatar-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0EA5E9;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+}
+
+.civic-profile-avatar-fallback {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0EA5E9, #1D4ED8);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+}
+
+.civic-google-badge-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
+.civic-profile-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0A1628;
+  margin-bottom: 4px;
+}
+
+.civic-profile-email {
+  font-size: 0.9rem;
+  color: #64748B;
+  margin-bottom: 12px;
+}
+
+.civic-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #E0F2FE;
+  color: #0284C7;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.civic-redirect-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.civic-redirect-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0EA5E9, #10B981);
+  border-radius: 999px;
+  animation: progressFill 2.5s linear forwards;
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
+@media (max-width: 1080px) {
+  .civic-auth-left {
+    padding: 36px 40px;
+  }
+  .civic-hero-heading {
+    font-size: 2.2rem;
+  }
+  .civic-form-card {
+    padding: 36px 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .civic-auth-wrapper {
+    flex-direction: column;
+  }
+  .civic-auth-left {
+    display: none; /* Hide full left side on mobile/tablet to prioritize fast form access */
+  }
+  .civic-mobile-brand {
+    display: flex;
+  }
+  .civic-auth-right {
+    min-height: 100vh;
+    padding: 24px 16px;
+    align-items: flex-start;
+  }
+  .civic-form-card {
+    padding: 32px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    margin: 20px 0;
+  }
+}
