@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # 1. CivicTrack Flask Backend (prometheus-flask-exporter)
+  - job_name: 'civictrack-backend'
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['backend:5000']
+        labels:
+          app: 'civictrack'
+          environment: 'production'
+
+  # 2. Prometheus Self-Monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

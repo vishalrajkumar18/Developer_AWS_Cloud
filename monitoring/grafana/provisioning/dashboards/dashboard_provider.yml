@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: 'CivicTrack Dashboards'
+    orgId: 1
+    folder: 'CivicTrack'
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

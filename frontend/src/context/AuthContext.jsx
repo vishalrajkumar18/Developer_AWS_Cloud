@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { mockUsers, mockComplaints } from '../data/mockData';
+import api from '../services/api';
 import {
   signInWithGoogle as firebaseSignInWithGoogle,
   isFirebaseConfigured,
@@ -27,7 +28,7 @@ export function AuthProvider({ children }) {
       }
     }
 
-    // 2. Load complaints
+    // 2. Load complaints from storage with mock fallback
     const storedComplaints = localStorage.getItem('civictrack_complaints');
     if (storedComplaints) {
       try {
@@ -39,6 +40,14 @@ export function AuthProvider({ children }) {
       setComplaints(mockComplaints);
       localStorage.setItem('civictrack_complaints', JSON.stringify(mockComplaints));
     }
+
+    // 2b. Attempt live sync with Flask REST API & MySQL
+    api.getComplaints().then((res) => {
+      if (res.ok && res.data && res.data.complaints && res.data.complaints.length > 0) {
+        setComplaints(res.data.complaints);
+        localStorage.setItem('civictrack_complaints', JSON.stringify(res.data.complaints));
+      }
+    }).catch(() => {});
 
     // 3. Listen to Firebase Auth state if configured
     let unsubscribe = () => {};
@@ -221,6 +230,14 @@ export function AuthProvider({ children }) {
     const updated = [newComplaint, ...complaints];
     setComplaints(updated);
     localStorage.setItem('civictrack_complaints', JSON.stringify(updated));
+
+    // Asynchronously sync with Flask REST API
+    api.createComplaint({
+      ...data,
+      tracking_id: newComplaint.id,
+      submittedBy: user?.email
+    }).catch(err => console.warn('Backend sync deferred:', err));
+
     return newComplaint.id;
   };
 
@@ -299,6 +316,13 @@ export function AuthProvider({ children }) {
 
     setComplaints(updated);
     localStorage.setItem('civictrack_complaints', JSON.stringify(updated));
+
+    // Asynchronously sync update with Flask REST API
+    api.updateComplaint(
+      id,
+      isObject ? newStatusOrUpdates : { status: newStatusOrUpdates, note: noteText }
+    ).catch(err => console.warn('Backend update sync deferred:', err));
+
     return true;
   };
 

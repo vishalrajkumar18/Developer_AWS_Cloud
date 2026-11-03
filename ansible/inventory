@@ -1,0 +1,7 @@
+[civictrack_servers]
+civictrack-ec2 ansible_host=YOUR_EC2_PUBLIC_IP ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/civictrack-key.pem
+
+[civictrack_servers:vars]
+ansible_python_interpreter=/usr/bin/python3
+app_dir=/opt/civictrack
+git_repo=https://github.com/vishalrajkumar18/Developer_AWS_Cloud.git

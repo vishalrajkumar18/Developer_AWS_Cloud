@@ -1,0 +1,7 @@
+# Root Docker Compose Entrypoint
+# Points to production configuration in docker/docker-compose.yml
+# Run with: docker compose -f docker/docker-compose.yml up -d
+# Or run with root alias below:
+
+include:
+  - docker/docker-compose.yml
